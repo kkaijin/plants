@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style type="text/css">
+		.shooter {
+			width: 80px; 
+			position: absolute; 	
+		}
+		.box {
+			background-image: url(game.png);
+			height: 1000px; 
+			background-size: 100% 100%;
+		}
+		.zombies {
+			width: 80px; 
+			position: absolute;
+			transition: 1s;
+		}
+	</style>
+</head>
+<body>	
+	
+	<div class="box" style="">
+		
+		<h5 style="position: absolute; left: 800px; top: 50px" class="score">0</h5>
+
+		<!--ГОРОХИ-->
+	    <img class="shooter" src="peashooter.png"  style="top: 250px; left: 600px;">		
+		<img class="shooter" src="peashooter.png"  style="top: 350px; left: 600px;">	
+		<img class="shooter" src="peashooter.png"  style="top: 450px; left: 600px;">	
+		<img class="shooter" src="peashooter.png"  style="top: 550px; left: 600px;">
+		<img class="shooter" src="peashooter.png"  style="top: 650px; left: 600px;">
+
+
+		<!--ЗОМБИ-->
+		<img class="zombies" src="zombie1.png" style="top: 220px; left: 1500px;">
+		<img class="zombies" src="zombie2.png" style="top: 320px; left: 1500px;">
+		<img class="zombies" src="zombie2.png" style="top: 420px; left: 1500px;">
+		<img class="zombies" src="zombie4.png" style="top: 520px; left: 1500px;">
+		<img class="zombies" src="zombie4.png" style="top: 620px; left: 1500px;">
+	</div>
+
+	<div class="col-10 bg-success mx-auto box1" style="height: 500px;">
+		<p >YOU WIN!!!!</p>
+	</div>
+<script>
+	let score = 0;
+	let plants = document.querySelectorAll(".shooter")
+	let zombie = document.querySelectorAll(".zombies")
+	let leftz1 = 1500;
+	let leftz2 = 1500;
+	let leftz3 = 1500;
+	let leftz4 = 1500;
+	let leftz5 = 1500;
+
+	document.querySelector(".box1").style.display = "none"
+
+
+	zombie[0].onclick = function() {
+		leftz1 = leftz1 - 100
+		zombie[0].style.left = leftz1 + "px";
+		console.log(leftz1);
+
+		if(leftz1==600){
+			plants[0].style.display = "none";
+			score = score + 100;
+			document.querySelector(".score").innerHTML = score
+			if(score==500){
+				document.querySelector(".box").style.display = "none"
+				document.querySelector(".box1").style.display = "block"
+			}
+		}
+	}
+
+	zombie[1].onclick = function() {
+		leftz2 = leftz2 - 100
+		zombie[1].style.left = leftz2 + "px";
+		console.log(leftz2);
+		
+		if(leftz2==600){
+			plants[1].style.display = "none";
+			score = score + 100;
+			document.querySelector(".score").innerHTML = score
+			if(score==500){
+				document.querySelector(".box").style.display = "none"
+				document.querySelector(".box1").style.display = "block"
+			}
+		}
+	}
+
+	zombie[2].onclick = function() {
+		leftz3 = leftz3 - 100
+		zombie[2].style.left = leftz3 + "px";
+		console.log(leftz3);
+		
+		if(leftz3==600){
+			plants[2].style.display = "none";
+			score = score + 100;
+			document.querySelector(".score").innerHTML = score
+			if(score==500){
+				document.querySelector(".box").style.display = "none"
+				document.querySelector(".box1").style.display = "block"
+			}
+		}
+	}
+
+	zombie[3].onclick = function() {
+		leftz4 = leftz4 - 100
+		zombie[3].style.left = leftz4 + "px";
+		console.log(leftz4);
+		
+		if(leftz4==600){
+			plants[3].style.display = "none";
+			score = score + 100;
+			document.querySelector(".score").innerHTML = score
+			if(score==500){
+				document.querySelector(".box").style.display = "none"
+				document.querySelector(".box1").style.display = "block"
+			}
+		}
+	}
+
+	zombie[4].onclick = function() {
+		leftz5 = leftz5 - 100
+		zombie[4].style.left = leftz5 + "px";
+		console.log(leftz5);
+		
+		if(leftz5==600){
+			plants[4].style.display = "none";
+			score = score + 100;
+			document.querySelector(".score").innerHTML = score
+			if(score==500){
+				document.querySelector(".box").style.display = "none"
+				document.querySelector(".box1").style.display = "block"
+			}
+		}
+	}
+
+	plants[0].onclick = function(){
+		plants[0].src = "Hd_split.webp"
+	}
+	plants[1].onclick = function(){
+		plants[1].src = "Hd_split.webp"
+	}
+	plants[2].onclick = function(){
+		plants[2].src = "Hd_split.webp"
+	}
+	plants[3].onclick = function(){
+		plants[3].src = "Hd_split.webp"
+	}
+	plants[4].onclick = function(){
+		plants[4].src = "Hd_split.webp"
+	}
+
+
+
+
+
+
+</script>
+</body>
+</html>
